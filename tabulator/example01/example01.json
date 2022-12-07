@@ -1,1 +1,50 @@
-["key" : "key","label": "label", "data":{}]
+[
+  {
+    "key": "key",
+    "label": "label",
+    "remote": false,
+    "columns": [
+      {
+        "field": "Name",
+        "type": "string"
+      },
+      {
+        "field": "Age",
+        "type": "string"
+      },
+      {
+        "field": "Favourite Color",
+        "type": "string"
+      },
+      {
+        "field": "Date Of Birth",
+        "type": "string"
+      }
+    ],
+    "data": []
+  },
+  {
+    "key": "key2",
+    "label": "label2",
+    "remote": false,
+    "columns": [
+      {
+        "field": "name",
+        "type": "string"
+      },
+      {
+        "field": "A",
+        "type": "number"
+      },
+      {
+        "field": "B",
+        "type": "number"
+      },
+      {
+        "field": "C",
+        "type": "number"
+      }
+    ],
+    "data": []
+  }
+]

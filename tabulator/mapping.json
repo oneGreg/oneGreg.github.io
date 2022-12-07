@@ -1,0 +1,9 @@
+[
+  {
+    "id": "mysqlTypeToTabulator",
+    "mapping": [
+      {"from":"integer","to":"number"},
+      {"from":"varchar","to":"string"}
+    ]
+  }
+]

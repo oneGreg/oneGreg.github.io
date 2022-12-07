@@ -1,20 +1,37 @@
+<!DOCTYPE html>
 <html>
 <body>
-Options
-  <select id="iCard" onchange="SetCard(this)">
-      <option value="0" selected="selected">(none)</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-      <option value="4">XXOption 4</option>
+  Options
+  <select id="iCard" onchange="dsChangedHandler(this)">
+    <option value="0" selected="selected">(none)</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+    <option value="4">XXOption 4</option>
   </select>
   <span id="msg"></span>
-  
+
   <script>
-  function SetCard(sel) {
-   setTimeout(function() { alert('SetCard called successfully.');},10);
-    document.getElementById("msg").innerHTML=sel.value + ":" + sel.options[sel.selectedIndex].text;
-}
+  document.table = "HALLO";
+  function warn(msg){
+    console.log(msg);
+  }
+  
+  function changeDatasource(key){
+    document.getElementById("msg").innerHTML=key;
+    if(document.table) {
+      warn("changeDatasource to :" + key);
+    // table.setData([]);
+    // table.setColumns();
+    } else {
+      warn("document.table not set");
+    }
+  }
+  
+  function dsChangedHandler(sel) {
+    // setTimeout(function() { alert('SetCard called successfully.');},10);
+    changeDatasource(sel.value);
+  }
   </script>
 </body>
 </html>
