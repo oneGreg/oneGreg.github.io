@@ -1,0 +1,20 @@
+<html>
+<body>
+Options
+  <select id="iCard" onchange="SetCard(this)">
+      <option value="0" selected="selected">(none)</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+      <option value="4">XXOption 4</option>
+  </select>
+  <span id="msg"></span>
+  
+  <script>
+  function SetCard(sel) {
+   setTimeout(function() { alert('SetCard called successfully.');},10);
+    document.getElementById("msg").innerHTML=sel.value + ":" + sel.options[sel.selectedIndex].text;
+}
+  </script>
+</body>
+</html>
