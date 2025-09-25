@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<!DOCTYPE html>
+<html>
 <head>
 <title>Cross-Browser QRCode generator for Javascript</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -8,7 +8,12 @@
 <script type="text/javascript" src="qrcode.js"></script>
 </head>
 <body>
-<input id="text" type="text" value="http://jindo.dev.naver.com/collie" style="width:80%" /><br />
+<input id="text" type="text" value="http://jindo.dev.naver.com/collie" style="width:80%" 
+onkeypress="makeCode()"
+onpaste="makeCode()"
+onchange="makeCode()"
+
+/><br />
 <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
 
 <script type="text/javascript">
@@ -17,17 +22,27 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 	height : 100
 });
 
-function makeCode () {		
+function makeCode () {	
+	console.log("makeCode")	
 	var elText = document.getElementById("text");
 	
+	
+	console.log("elText.value:" + elText.value)	
+	/*
 	if (!elText.value) {
 		alert("Input a text");
 		elText.focus();
 		return;
 	}
+	*/
 	
 	qrcode.makeCode(elText.value);
 }
+
+
+var defaultText="f=1000;F=95000;e=10.0,c=11.0;d=1;H=20"
+var elText = document.getElementById("text");
+elText.value=defaultText
 
 makeCode();
 
